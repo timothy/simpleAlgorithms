@@ -39,3 +39,4 @@ std::vector<int> dataGen(int howMany, int range);
  * \return 
  */
 std::vector<int> dataGen(int howMany, int range, bool shouldSort);
+bool palindrome(std::string str);

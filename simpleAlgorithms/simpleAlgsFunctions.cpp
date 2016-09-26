@@ -1,8 +1,21 @@
 #include "stdafx.h"
+#include "simpleAlgsFunctions.h"
 #include <string>
 #include <vector>
 #include <ctime>
 #include <algorithm>
+#include <regex>
+using namespace std;
+
+bool palindrome(string str)
+{
+	regex number("[[:digit:]]|[[:space:]]|[[:punct:]]");
+
+	transform(str.begin(), str.end(), str.begin(), ::tolower);
+	str = regex_replace(str, number, "");
+
+	return str == reverse(str);
+}
 
 std::vector<int> dataGen(int howMany, int range, bool shouldSort)
 {

@@ -6,12 +6,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <regex>
 //#include <cmath>
 using namespace std;
 
 
 int main()
 {
+	cout << palindrome("Th1s, i^$!s what I. 8 2da@y") << endl;//should be false
+	cout << palindrome("A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!") << endl;//should be true
+	cout << endl;
 	string tim = "timothy";
 	cout << reverse(tim) << endl << count(begin(tim), end(tim),'t') << endl;
 
