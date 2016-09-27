@@ -81,3 +81,11 @@ std::vector<std::string> splitString(std::string str, std::string spltr);
  * \return the integer value of the largest word in the string
  */
 int longestWord(std::string str);
+
+
+/**
+ * \brief this will capitalize the first letter of every word in a string
+ * \param str A string that you would like all the words first letters capitalized
+ * \return a string with every words first letter capitalized
+ */
+std::string capEachWrd(std::string str);

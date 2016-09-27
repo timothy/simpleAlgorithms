@@ -6,6 +6,22 @@
 #include <regex>
 using namespace std;
 
+string capEachWrd(string str)
+{
+	if (isalpha(str[0]))
+	{
+		str[0] = toupper(str[0]);
+	}
+	for (auto i = 1; i < str.length(); i++)
+	{
+		if (isalpha(str[i]) && str[i - 1] == ' ')
+		{
+			str[i] = toupper(str[i]);
+		}
+	}
+	return str;
+}
+
 int longestWord(string str)
 {
 	vector<string> wrds = splitString(str, ' ');

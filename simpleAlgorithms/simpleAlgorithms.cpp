@@ -11,10 +11,15 @@
 using namespace std;
 
 
-
 int main()
 {
 	string testStr = "five big people walking five miles the wrong way five times";
+
+	cout << capEachWrd(testStr) << endl;
+
+	char a = 'a';
+
+	cout << a - 20 << endl;
 
 	cout << longestWord(testStr) << endl;
 
@@ -24,7 +29,7 @@ int main()
 		cout << stringy << "\n";
 	}
 
-	 vectStr = splitString(testStr, "five");
+	vectStr = splitString(testStr, "five");
 	for (auto stringy : vectStr)
 	{
 		cout << stringy << "\n";
