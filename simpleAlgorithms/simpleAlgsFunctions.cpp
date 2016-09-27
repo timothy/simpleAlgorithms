@@ -1,18 +1,61 @@
 #include "stdafx.h"
 #include "simpleAlgsFunctions.h"
-#include <string>
 #include <vector>
 #include <ctime>
 #include <algorithm>
 #include <regex>
 using namespace std;
 
+vector<string> splitString(string str, string spltr)
+{
+	vector<string> vs;
+	string temp = "";
+	for (auto i = 0; i < str.length(); i++)
+	{
+		if (str[i] == spltr[0])
+		{
+			if (str.substr(i, spltr.length()) == spltr)
+			{
+				vs.push_back(temp);
+				temp = "";
+				i += spltr.length() - 1;
+			}
+		}
+		else
+		{
+			temp.push_back(str[i]);
+		}
+	}
+	vs.push_back(temp);
+	return vs;
+}
+
+vector<string> splitString(string str, char spltr)
+{
+	vector<string> vs;
+	string temp = "";
+	for (auto i = 0; i < str.length(); i++)
+	{
+		if (str[i] == spltr)
+		{
+			vs.push_back(temp);
+			temp = "";
+		}
+		else
+		{
+			temp.push_back(str[i]);
+		}
+	}
+	vs.push_back(temp);
+	return vs;
+}
+
 bool palindrome(string str)
 {
-	regex number("[[:digit:]]|[[:space:]]|[[:punct:]]");
+	regex format("[[:digit:]]|[[:space:]]|[[:punct:]]");
 
 	transform(str.begin(), str.end(), str.begin(), ::tolower);
-	str = regex_replace(str, number, "");
+	str = regex_replace(str, format, "");
 
 	return str == reverse(str);
 }

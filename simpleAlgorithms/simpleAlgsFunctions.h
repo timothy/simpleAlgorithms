@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include <vector>
 
 /**
@@ -40,3 +39,5 @@ std::vector<int> dataGen(int howMany, int range);
  */
 std::vector<int> dataGen(int howMany, int range, bool shouldSort);
 bool palindrome(std::string str);
+std::vector<std::string> splitString(std::string str, char spltr);
+std::vector<std::string> splitString(std::string str, std::string spltr);

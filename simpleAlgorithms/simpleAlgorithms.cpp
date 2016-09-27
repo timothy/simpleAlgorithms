@@ -13,11 +13,25 @@ using namespace std;
 
 int main()
 {
+	vector<string> vectStr = splitString("I want to eat some bread", ' ');
+	for (auto stringy : vectStr)
+	{
+		cout << stringy << "\n";
+	}
+
+	 vectStr = splitString("Hello ^_^ This is the Best app ^_^ because it is mine ^_^", "^_^");
+	for (auto stringy : vectStr)
+	{
+		cout << stringy << "\n";
+	}
+
+
 	cout << palindrome("Th1s, i^$!s what I. 8 2da@y") << endl;//should be false
 	cout << palindrome("A man, a plan, a cat, a ham, a yak, a yam, a hat, a canal-Panama!") << endl;//should be true
-	cout << endl;
+
+
 	string tim = "timothy";
-	cout << reverse(tim) << endl << count(begin(tim), end(tim),'t') << endl;
+	cout << reverse(tim) << endl << count(begin(tim), end(tim), 't') << endl;
 
 	int flipIt = 123450;
 	cout << reverse(flipIt) << endl;
@@ -26,7 +40,7 @@ int main()
 	cout << factorialize(num) << endl;
 
 	vector<int> vectInt = dataGen(10);
-	for (auto inty:vectInt)
+	for (auto inty : vectInt)
 	{
 		cout << inty << " ";
 	}cout << endl;
