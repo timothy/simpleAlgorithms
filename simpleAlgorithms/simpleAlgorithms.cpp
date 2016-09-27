@@ -11,15 +11,20 @@
 using namespace std;
 
 
+
 int main()
 {
+	string testStr = "five big people walking five miles the wrong way five times";
+
+	cout << longestWord(testStr) << endl;
+
 	vector<string> vectStr = splitString("I want to eat some bread", ' ');
 	for (auto stringy : vectStr)
 	{
 		cout << stringy << "\n";
 	}
 
-	 vectStr = splitString("Hello ^_^ This is the Best app ^_^ because it is mine ^_^", "^_^");
+	 vectStr = splitString(testStr, "five");
 	for (auto stringy : vectStr)
 	{
 		cout << stringy << "\n";

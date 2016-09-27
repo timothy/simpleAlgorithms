@@ -6,6 +6,17 @@
 #include <regex>
 using namespace std;
 
+int longestWord(string str)
+{
+	vector<string> wrds = splitString(str, ' ');
+	int largeWrdLength = wrds[0].length();
+
+	for (auto i = 1; i < wrds.size(); i++) {
+		largeWrdLength = (largeWrdLength < wrds[i].length()) ? wrds[i].length() : largeWrdLength;
+	}
+	return largeWrdLength;
+}
+
 vector<string> splitString(string str, string spltr)
 {
 	vector<string> vs;
